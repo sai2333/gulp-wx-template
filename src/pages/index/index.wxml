@@ -1,0 +1,10 @@
+<view class="xxx-page">
+  <view class="group-box">
+    <text class="module-title">使用icon,需要把iconfont.css后缀修改为wxss</text>
+    <text class="iconfont icon-zuo icon-box"></text>
+  </view>
+  <view class="group-box">
+    <text class="module-title">使用base64图片,如果图片过多的话，建议使用网络图片,小程序有项目大小限制</text>
+    <view class="baseBg"></view>
+  </view>
+</view>

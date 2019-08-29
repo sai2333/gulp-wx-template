@@ -1,0 +1,6 @@
+<template name="tips">
+  <view class="tips-box">
+    <icon type="warn" size="16" color="#f63f33"/>
+    <text class="text">{{data}}</text>
+  </view>
+</template>

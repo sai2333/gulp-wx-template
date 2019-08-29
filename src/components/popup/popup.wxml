@@ -1,0 +1,33 @@
+<!--components/popup/popup.wxml-->
+<view class="{{showModal ? '' : 'hidden'}}">
+  <view class="modal-mask" catchtouchmove="preventTouchMove"></view>
+  <view class="modal-dialog" catchtouchmove="preventTouchMove">
+    <view class='m-title' style="color:{{titleColor}}">
+      {{title}}
+    </view>
+    <view class="m-info">
+      <block wx:if="{{imgUrl}}">
+        <image src='{{imgUrl}}' class='m-i-img'></image>
+      </block>
+      <text>
+        {{content}}    
+      </text>
+      <slot name="content">
+        
+      </slot>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-footer btn-l-footer" bindtap="_onCancel" hidden="{{hiddenCancel}}">
+        <text>{{cancelText}}</text>
+      </view>
+      <view class="btn-footer btn-r-footer" bindtap="_onConfirm">
+        <block wx:if="{{buttonType}}">
+          <button class="getUserButton" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">{{confirmText}}</button>
+        </block>
+        <block wx:else>
+          <text class="color-black">{{confirmText}}</text>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>

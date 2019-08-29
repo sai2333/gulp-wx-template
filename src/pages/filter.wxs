@@ -1,0 +1,8 @@
+//过滤器
+ function test (resText) {
+    console.log(resText);
+}
+
+module.exports = {
+    test: test,
+};

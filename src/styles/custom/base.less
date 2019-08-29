@@ -1,0 +1,160 @@
+@import "./var.less";
+.l-w-page{
+    background-color: #f5f5f5;
+}
+.container-box{
+    background-color: #fff;
+    box-shadow: 0rpx 3rpx 16rpx 0rpx 
+		rgba(0, 0, 0, 0.14);
+    border-radius: 10rpx;
+	padding: 35rpx;
+}
+//占位符默认样式
+.input-placeholder{
+	font-size: 26rpx;
+	color: @light-gray;
+}
+.container{
+    width: 690rpx;
+    margin: 0 auto;
+}
+.bar{
+	width: 100vw;
+	height: 13rpx;
+	background-color: #f0f1f5;
+}
+//按钮
+.btn-group{
+	width: 100%;
+	.all-center();
+	.block-btn{
+		color: #fff;
+		font-size: 38rpx;
+		width: 620rpx;
+		height: 90rpx;
+		background-color: @red;
+		box-shadow: 0px 4rpx 4rpx 0px 
+			rgba(159, 6, 10, 0.78);
+		border-radius: 46rpx;
+		.all-center();
+		&:after{
+			border: none;
+		}
+	}
+	.middle-btn{
+		width: 280rpx;
+		height: 70rpx;
+		font-size: 30rpx;
+		color: #fff;
+		border-radius: 35rpx;
+		.all-center();
+		& + .middle-btn{
+			margin-left: 20rpx;
+		}
+		&:after{
+			border: none;
+		}
+	}
+	.red{
+		background-image: linear-gradient(0deg, 
+		#f63f33 0%, 
+		#f64539 100%);
+		box-shadow: 0rpx 3rpx 4rpx 0rpx 
+			rgba(159, 6, 10, 0.78);
+	}
+	.yellow{
+		background-image: linear-gradient(0deg, 
+		#ffa44c 0%, 
+		#fbb32c 100%);
+		box-shadow: 0rpx 3rpx 4rpx 0rpx 
+			rgba(175, 116, 7, 0.78);
+	}
+}
+//公共函数
+.hover-mixin() {
+    &:hover {
+      border: 1px solid red;
+    }
+}
+.all-center(){
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+//图片
+.img-wrapper(@w,@h){
+	width: @w;
+	height: @h;
+	overflow: hidden;
+	.all-center();
+	image{
+		height: 100%;
+		max-width: 100%;
+	}
+}
+//背景函数
+.bg(@imgUrl,@imgType: jpg,@bgPos: center,@bgSize: cover){
+    background: url('@{img-dir}/@{imgUrl}.@{imgType}') no-repeat @bgPos;
+    background-size: @bgSize;
+}
+//清楚浮动
+.clearfix() {
+	&:before,
+	&:after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&:after {
+		clear: both;
+	}
+}
+//裁剪
+.multi-text-overflow(@line-height,@num){
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: @num;
+	-webkit-box-orient: vertical;
+	line-height: @line-height;
+	height: @line-height * @num;
+}
+// Single side border-radius
+.border-top-radius(@radius) {
+	border-top-right-radius: @radius;
+	border-top-left-radius: @radius;
+}
+
+.border-right-radius(@radius) {
+	border-bottom-right-radius: @radius;
+	border-top-right-radius: @radius;
+}
+
+.border-bottom-radius(@radius) {
+	border-bottom-right-radius: @radius;
+	border-bottom-left-radius: @radius;
+}
+
+.border-left-radius(@radius) {
+	border-bottom-left-radius: @radius;
+	border-top-left-radius: @radius;
+}
+
+// Center-align a block level element
+.center-block() {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// CSS image replacement
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+.hide-text() {
+	font-size: 0;
+	line-height: 0;
+	color: transparent;
+	text-shadow: none;
+	background-color: transparent;
+	border: 0;
+}
+
+//优惠券
