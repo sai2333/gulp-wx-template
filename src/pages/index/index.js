@@ -2,19 +2,21 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-29 17:27:17
- * @LastEditTime: 2019-09-03 12:03:12
+ * @LastEditTime: 2019-09-03 15:54:45
  * @LastEditors: Please set LastEditors
  */
 //gulp autp 命令每次copy的模板就是template
 // 全局app实例
 const app = getApp();
 import redis from "../../utils/redis";
+import base from "../../utils/base";
 import WxParse from "../../components/wxParse/wxParse";
 import api from "../../http/api";
 Page({
   data: {
     name: null,
     age: null,
+    desc: '',
   },
   getAge() {
     let age = redis.get('age');
@@ -35,14 +37,31 @@ Page({
         fail: () => {},
         complete: () => {}
       });
-        
-      
     }
   },
   getStorage() {
     this.setData({
       name: redis.get('name'),
       age: redis.get('age')
+    })
+  },
+  authorization() {
+    base.isAuthorization().then(res => {
+      console.log(res);
+    }).catch(function(error){
+      console.log('报错啦');
+      console.error(error);
+    });
+  },
+  isIos() {
+    base.isIos().then(res => {
+      console.log(res);
+      
+      if(res){
+        console.log('IOS');
+      }else{
+        console.log('安卓');
+      }
     })
   },
   onLoad() {
@@ -54,6 +73,9 @@ Page({
      * html解析示例
      */
     api.shop.get({id: 25}).then(res => {
+      this.setData({
+        desc: res.data.explain
+      })
       let article = res.data.desc_html;
       WxParse.wxParse('article', 'html', article, that, 5);
     });

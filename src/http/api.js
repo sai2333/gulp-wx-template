@@ -2,14 +2,14 @@
  * @Description: In User Settings Edit
  * @Author: sai
  * @Date: 2019-07-22 10:06:09
- * @LastEditTime: 2019-09-03 12:01:57
+ * @LastEditTime: 2019-09-03 15:44:19
  * @LastEditors: Please set LastEditors
  */
 import Http from "./http";
 import site from './site';
 const method = ["get", "post", "put", "delete"];
 const http = new Http();
-let baseUrl = site.baseUrl;
+let baseUrl = site.baseUrlDev;
 
 function setUrl(url) {
     baseUrl = url;

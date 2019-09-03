@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: sai
+ * @Date: 2019-08-29 16:59:57
+ * @LastEditTime: 2019-09-03 17:06:15
+ * @LastEditors: Please set LastEditors
+ */
 const gulp = require('gulp');
 const less = require('gulp-less');
 const rename = require('gulp-rename');
@@ -15,6 +22,8 @@ const lessFiles = [
   `${srcPath}/custom/*.less`,
   `!${srcPath}/_template/*.less`
 ];
+const srcNpmFiles = './src/node_modules/**';
+// const distNpmFiles = './dist'
 const iconFile = [
   `${srcPath}/icon/**`
 ];
@@ -30,6 +39,14 @@ gulp.task('clean', done => {
   del.sync(['dist/**/*']);
   done();
 });
+
+/* copyNpm包到dist */
+const npm = () => {
+  return gulp 
+    .src(srcNpmFiles)
+    .pipe(gulp.dest(`${distPath}node_modules`));
+};
+gulp.task(npm);
 
 /* 编译wxml文件 */
 const wxml = () => {
@@ -113,20 +130,21 @@ gulp.task('watch', () => {
   gulp.watch(imgFiles, img);
   gulp.watch(jsonFiles, json);
   gulp.watch(wxmlFiles, wxml);
+  gulp.watch(srcNpmFiles, npm);
 });
 
 
 /* build */
 gulp.task(
   'build',
-  gulp.series('clean', gulp.parallel( 'wxml', 'icon','js', 'json', 'wxss', 'img'))
+  gulp.series('clean', gulp.parallel( 'wxml', 'icon','js', 'json', 'wxss', 'img','npm'))
 );
 
 /* dev */
-gulp.task('dev', gulp.series('clean', gulp.parallel( 'wxml','icon', 'js', 'json', 'wxss', 'img'), 'watch'));
+gulp.task('dev', gulp.series('clean', gulp.parallel( 'wxml','icon', 'js', 'json', 'wxss', 'img','npm'), 'watch'));
 
 /* test */
-gulp.task('test', gulp.series('clean', gulp.parallel( 'wxml', 'js', 'json', 'wxss', 'img')));
+gulp.task('test', gulp.series('clean', gulp.parallel( 'wxml', 'js', 'json', 'wxss', 'img','npm')));
 
 /**
  * auto 自动创建page or template or component

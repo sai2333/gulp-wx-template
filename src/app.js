@@ -2,13 +2,13 @@
  * @Description: In User Settings Edit
  * @Author: sai
  * @Date: 2019-07-22 10:06:09
- * @LastEditTime: 2019-09-03 11:31:42
+ * @LastEditTime: 2019-09-03 15:11:32
  * @LastEditors: Please set LastEditors
  */
 import api from "./http/api";
 import site from "./http/site";
 import redis from "./utils/redis";
-// import redis from "../../utils/redis";
+
 App({
   login(reset) {
     

@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: sai
  * @Date: 2019-07-22 10:06:09
- * @LastEditTime: 2019-08-29 17:22:43
+ * @LastEditTime: 2019-09-03 14:51:52
  * @LastEditors: Please set LastEditors
  */
 
@@ -48,9 +48,6 @@ const base = {
    * @param  {[type]}  item [description]
    * @return {Boolean}      [description]
    */
-  noop() {
-    return null;
-  },
   hasOwn(obj, type) {
     return Object.prototype.hasOwnProperty.call(obj, type);
   },
@@ -160,15 +157,13 @@ const base = {
   },
   //是否已经授权
   isAuthorization(obj) {
-    let status = false;
     return new Promise((resolve, reject) => {
       wx.getUserInfo({
         success: function(res) {
-          status = true;
           resolve(res);
         },
         fail: function (rej) {
-          obj.popup.show();
+          reject(rej);
         }
       })
     })
@@ -180,6 +175,8 @@ const base = {
         success (res) {
           if(res.system.indexOf('iOS') !== -1){
             resolve(true);
+          }else{
+            resolve(false);
           }
         },
         fail(err) {

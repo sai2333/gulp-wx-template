@@ -14,7 +14,17 @@
     <view class="child-group" bind:tap="getAge">点击查看是否消失</view>
   </view>
   <view class="group-box">
+    <text class="module-title">查询是否已经授权</text>
+    <view class="index-button" bind:tap="authorization">点我授权</view>
+  </view>
+  <view class="group-box">
+    <text class="module-title">查询设备是否小于ios</text>
+    <view class="index-button" bind:tap="isIos">点我查询</view>
+  </view>
+
+  <view class="group-box">
     <text class="module-title">富文本解析</text>
+    <text class="shop-desc" decode="{{true}}">{{desc}}</text>
     <import src="../../components/wxParse/wxParse.wxml"/> 
     <view class="wxParse">
         <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
