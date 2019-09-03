@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "这是标题",
+  "usingComponents": {
+    "popup": "../../components/popup/popup"
+  }
+}

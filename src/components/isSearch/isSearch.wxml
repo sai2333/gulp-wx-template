@@ -1,0 +1,8 @@
+<view class="section search-box dev-class">
+  <form bindsubmit="formSubmit">
+    <input type="text" class="search-input" placeholder-class="input-placeholder" confirm-type="search" placeholder="{{searchText}}" name="key" bindconfirm="formSubmit" bindinput="bindKeyInput"/>
+    <button form-type="submit" class="from-submit">
+      <icon type="search" class="search-button" size="20" color="#f63f33" />
+    </button>
+  </form>
+</view>

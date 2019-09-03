@@ -1,6 +1,8 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/save/save",
+    "pages/popup/popup"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
@@ -13,6 +15,18 @@
     "backgroundColorBottom": "#ffffff",
     "enablePullDownRefresh": false,
     "onReachBottomDistance": 10
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/save/save",
+      "text": "组件"
+    },{
+      "pagePath": "pages/popup/popup",
+      "text": "模态框"
+    }]
   },
   "networkTimeout": {},
   "navigateToMiniProgramAppIdList": ["wxfdcee92a299bcaf1"],

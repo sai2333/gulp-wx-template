@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: sai
  * @Date: 2019-07-22 10:06:09
- * @LastEditTime: 2019-08-29 17:35:02
+ * @LastEditTime: 2019-09-03 11:31:42
  * @LastEditors: Please set LastEditors
  */
 import api from "./http/api";
@@ -37,6 +37,8 @@ App({
   },
   onLaunch(options) {
     this.getEnvironment();
+    redis.put('name','sai');
+    redis.put('age','25',10);
   },
   onShow(options) {
     

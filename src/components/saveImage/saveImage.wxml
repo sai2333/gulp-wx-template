@@ -1,0 +1,1 @@
+<view class="dev-class" bind:tap="saveImageToPhone">{{btnText}}</view>

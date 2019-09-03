@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: sai
  * @Date: 2019-07-22 10:06:09
- * @LastEditTime: 2019-08-29 17:17:42
+ * @LastEditTime: 2019-09-03 12:01:57
  * @LastEditors: Please set LastEditors
  */
 import Http from "./http";
@@ -34,6 +34,7 @@ function restFul(url, excludeMethod = []) {
 }
 export default {
     setUrl: setUrl,
+    shop: restFul('/api/Shop'),//商家列表
     //test
     // login: restFul('/api/Login'),
 }

@@ -1,7 +1,13 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-29 16:59:57
+ * @LastEditTime: 2019-09-03 10:35:48
+ * @LastEditors: Please set LastEditors
+ */
 //gulp autp 命令每次copy的模板就是template
 // 全局app实例
 const app = getApp();
-console.log(app);
 
 Page({
   data: {},

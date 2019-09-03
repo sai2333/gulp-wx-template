@@ -1,0 +1,10 @@
+<view class="xxx-page">
+  <saveImage dev-class="btn" btnText="{{saveObj.btnText}}" fileUrl="{{saveObj.fileObj}}"></saveImage>
+  <isSearch ononsubmit="test" searchText="请输入您要搜索的内容"></isSearch>
+  <canvas style="width: 188px; height: 188px;" canvas-id="couponQrcode" class="noneCanvas"></canvas>
+  <poster id="poster" config="{{posterConfig}}" bind:success="onPosterSuccess" bind:fail="onPosterFail">
+    <button>生成海报</button>
+  </poster>
+  <text class="" selectable="false" space="false" decode="false">https://github.com/jasondu/wxa-plugin-canvas</text>
+    
+</view>

@@ -7,4 +7,17 @@
     <text class="module-title">使用base64图片,如果图片过多的话，建议使用网络图片,小程序有项目大小限制</text>
     <view class="baseBg"></view>
   </view>
+  <view class="group-box">
+    <text class="module-title">storage默认是无限时间。</text>
+    <view class="child-group">我是无限时间的：{{name}}</view>
+    <view class="child-group">我在10s后消失：{{age}}</view>
+    <view class="child-group" bind:tap="getAge">点击查看是否消失</view>
+  </view>
+  <view class="group-box">
+    <text class="module-title">富文本解析</text>
+    <import src="../../components/wxParse/wxParse.wxml"/> 
+    <view class="wxParse">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
 </view>

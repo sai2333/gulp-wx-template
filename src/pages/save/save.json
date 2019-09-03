@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "保存图片",
+  "usingComponents": {
+    "saveImage": "../../components/saveImage/saveImage",
+    "isSearch": "../../components/isSearch/isSearch",
+    "poster": "../../components/miniprogram_dist/poster/index"
+  }
+}

@@ -1,12 +1,62 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-29 17:27:17
+ * @LastEditTime: 2019-09-03 12:03:12
+ * @LastEditors: Please set LastEditors
+ */
 //gulp autp 命令每次copy的模板就是template
 // 全局app实例
 const app = getApp();
-console.log(app);
-
+import redis from "../../utils/redis";
+import WxParse from "../../components/wxParse/wxParse";
+import api from "../../http/api";
 Page({
-  data: {},
+  data: {
+    name: null,
+    age: null,
+  },
+  getAge() {
+    let age = redis.get('age');
+    if(age){
+      this.setData({
+        age: age 
+      })
+    }else{
+      wx.showToast({
+        title: '已经不存在了',
+        icon: 'none',
+        image: '',
+        duration: 1500,
+        mask: false,
+        success: (result) => {
+          
+        },
+        fail: () => {},
+        complete: () => {}
+      });
+        
+      
+    }
+  },
+  getStorage() {
+    this.setData({
+      name: redis.get('name'),
+      age: redis.get('age')
+    })
+  },
   onLoad() {
     // Do some initialize when page load.
+    this.getStorage();
+
+    let that = this;
+    /**
+     * html解析示例
+     */
+    api.shop.get({id: 25}).then(res => {
+      let article = res.data.desc_html;
+      WxParse.wxParse('article', 'html', article, that, 5);
+    });
   },
   onReady() {
     // Do something when page ready.
