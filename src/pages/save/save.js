@@ -2,17 +2,23 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-03 09:48:24
- * @LastEditTime: 2019-09-03 17:03:00
+ * @LastEditTime: 2019-09-05 14:12:30
  * @LastEditors: Please set LastEditors
  */
+// This is our App Service.
+// This is our data.
+// const computedBehavior = require('../../vendor/miniprogram-computed/index')
+import * as watch from '../../vendor/miniprogram-computed/index';
+console.log(watch);
 import posterConfig from "../../utils/poster";
-const computedBehavior = require('miniprogram-computed');
-console.log(computedBehavior);
-
 
 Page({
   data: {
     posterConfig: posterConfig.couponConfig,
+    zoom: {
+      dog: '汪',
+      cat: '喵'
+    },
     saveObj: {
       btnText: '保存图片',
       fileUrl: 'xxxx'
@@ -31,8 +37,20 @@ Page({
   test(e) {
     console.log(e);
   },
+  setName() {
+    let cat = 'zoom.cat';
+    this.setData({
+      [cat]: '喵喵喵'
+    })
+  },
+  watch: {
+    zoom: function(newVal, oldVal) {
+      console.log(newVal, oldVal);
+    }
+  },
   onLoad() {
     // Do some initialize when page load.
+    watch.setWatcher(this);
   },
   onReady() {
     // Do something when page ready.

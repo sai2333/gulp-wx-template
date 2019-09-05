@@ -30,5 +30,8 @@
   },
   "networkTimeout": {},
   "navigateToMiniProgramAppIdList": ["wxfdcee92a299bcaf1"],
-  "debug": true
+  "debug": true,
+  "usingComponents": {
+    "van-button": "./vendor/vant-weapp/dist/button/index"
+  }
 }

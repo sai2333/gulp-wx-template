@@ -20,6 +20,8 @@
   <view class="group-box">
     <text class="module-title">查询设备是否小于ios</text>
     <view class="index-button" bind:tap="isIos">点我查询</view>
+    <van-button type="primary">按钮</van-button>
+    <view class="van-multi-ellipsis--l2 top-1px">这是一段最多显示两行的文字，后面的内容会省略这是一段最多显示两行的文字，后面的内容会省略这是一段最多显示两行的文字，后面的内容会省略</view>
   </view>
 
   <view class="group-box">

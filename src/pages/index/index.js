@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-29 17:27:17
- * @LastEditTime: 2019-09-03 15:54:45
+ * @LastEditTime: 2019-09-04 10:18:02
  * @LastEditors: Please set LastEditors
  */
 //gulp autp 命令每次copy的模板就是template
@@ -12,6 +12,8 @@ import redis from "../../utils/redis";
 import base from "../../utils/base";
 import WxParse from "../../components/wxParse/wxParse";
 import api from "../../http/api";
+
+
 Page({
   data: {
     name: null,
