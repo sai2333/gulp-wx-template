@@ -37,11 +37,11 @@ Component({
     },
     cancelText: {
       type: String,
-      value: ''
+      value: '取消'
     },
     confirmText: {
       type: String,
-      value: ''
+      value: '确认'
     },
     imgUrl: {
       type: String,
