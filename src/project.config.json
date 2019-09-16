@@ -12,8 +12,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
-	"appid": "wx36b7e872c2ba4e8a",
-	"projectname": "99coupon-front",
+	"appid": "",
+	"projectname": "项目名称",
 	"isGameTourist": false,
 	"scripts": {
 		"beforeCompile": "",

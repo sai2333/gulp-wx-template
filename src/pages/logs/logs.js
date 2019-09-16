@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-08-29 16:59:57
- * @LastEditTime: 2019-09-03 10:59:04
+ * @LastEditTime: 2019-09-03 10:35:48
  * @LastEditors: Please set LastEditors
  */
 //gulp autp 命令每次copy的模板就是template
@@ -11,24 +11,12 @@ const app = getApp();
 
 Page({
   data: {},
-  confirm() {
-    console.log('确认了');
-    
-  },
-  cancel() {
-    console.log('取消了');
-    
-  },
-  showModal() {
-    this.popup.show();
-  },
   onLoad() {
     // Do some initialize when page load.
   },
-  onReady: function () {  
-    //需要在ready显示的选择弹框dom
-		this.popup = this.selectComponent('#popup');
-	},
+  onReady() {
+    // Do something when page ready.
+  },
   onShow() {
     // Do something when page show.
   },

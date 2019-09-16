@@ -1,4 +1,0 @@
-<view class="xxx-page">
-  <popup id="popup" confirmText="确认" cancelText="取消" title="提示" content="主要内容" oncancelEvent="cancel" onconfirmEvent="confirm"></popup>
-  <view bind:tap="showModal">显示弹框</view>
-</view>

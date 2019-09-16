@@ -1,8 +1,7 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/save/save",
-    "pages/popup/popup"
+    "pages/logs/logs"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
@@ -20,18 +19,14 @@
     "list": [{
       "pagePath": "pages/index/index",
       "text": "首页"
-    }, {
-      "pagePath": "pages/save/save",
-      "text": "组件"
     },{
-      "pagePath": "pages/popup/popup",
-      "text": "模态框"
+      "pagePath": "pages/logs/logs",
+      "text": "日志"
     }]
   },
   "networkTimeout": {},
   "navigateToMiniProgramAppIdList": ["wxfdcee92a299bcaf1"],
-  "debug": true,
+  "debug": false,
   "usingComponents": {
-    "van-button": "./vendor/vant-weapp/dist/button/index"
   }
 }
