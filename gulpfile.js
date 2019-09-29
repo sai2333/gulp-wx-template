@@ -22,6 +22,11 @@ const lessFiles = [
   `${srcPath}/custom/*.less`,
   `!${srcPath}/_template/*.less`
 ];
+const wxssFiles = [
+  `${srcPath}/*.wxss`,
+  `${srcPath}/custom/*.wxss`,
+  `!${srcPath}/_template/*.wxss`
+];
 const srcNpmFiles = './src/node_modules/**';
 const srcVendor = './src/vendor/**';
 // const distNpmFiles = './dist'
@@ -113,6 +118,13 @@ const wxss = () => {
 };
 gulp.task(wxss);
 
+const copyWxss = () => {
+  return gulp 
+    .src(wxssFiles)
+    .pipe(gulp.dest(distPath));
+};
+gulp.task(copyWxss);
+
 /* 编译压缩图片 */
 const img = () => {
   return gulp
@@ -146,14 +158,14 @@ gulp.task('watch', () => {
 /* build */
 gulp.task(
   'build',
-  gulp.series('clean', gulp.parallel( 'wxml','vendor', 'icon','js', 'json', 'wxss', 'img','npm'))
+  gulp.series('clean', gulp.parallel( 'wxml','vendor', 'icon','js', 'json', 'wxss','copyWxss', 'img','npm'))
 );
 
 /* dev */
-gulp.task('dev', gulp.series('clean', gulp.parallel( 'wxml','vendor','icon', 'js', 'json', 'wxss', 'img','npm'), 'watch'));
+gulp.task('dev', gulp.series('clean', gulp.parallel( 'wxml','vendor','icon', 'js', 'json', 'wxss','copyWxss', 'img','npm'), 'watch'));
 
 /* test */
-gulp.task('test', gulp.series('clean', gulp.parallel( 'wxml','vendor', 'js', 'json', 'wxss', 'img','npm')));
+gulp.task('test', gulp.series('clean', gulp.parallel( 'wxml','vendor', 'js', 'json', 'wxss','copyWxss', 'img','npm')));
 
 /**
  * auto 自动创建page or template or component
