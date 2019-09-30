@@ -24,7 +24,9 @@
       "text": "日志"
     }]
   },
-  "networkTimeout": {},
+  "networkTimeout": {
+    "request": 10000
+  },
   "navigateToMiniProgramAppIdList": ["wxfdcee92a299bcaf1"],
   "debug": false,
   "usingComponents": {
