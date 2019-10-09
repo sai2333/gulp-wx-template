@@ -546,11 +546,15 @@ Component({
                                 fail: (err) => {
                                     this.triggerEvent('fail', err);
                                 },
+                                complete: (res) => {
+                                    wx.hideLoading();
+                                }
                             }, this);
                         }, time);
                     });
                 })
                 .catch((err) => {
+                    wx.hideLoading();
                     wx.showToast({ icon: 'none', title: err.errMsg || '生成失败' });
                     console.error(err);
                 });
