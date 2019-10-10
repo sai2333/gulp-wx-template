@@ -25,7 +25,8 @@ const lessFiles = [
 const wxssFiles = [
   `${srcPath}/*.wxss`,
   `${srcPath}/custom/*.wxss`,
-  `!${srcPath}/_template/*.wxss`
+  `!${srcPath}/_template/*.wxss`,
+  `${srcPath}/colorui/*.wxss`
 ];
 const srcNpmFiles = './src/node_modules/**';
 const srcVendor = './src/vendor/**';

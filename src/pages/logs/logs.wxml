@@ -1,3 +1,19 @@
-<view class="xxx-page">
-  <!-- content -->
-</view>
+<form action="">
+  <view class="cu-form-group">
+		<view class="title">多列选择</view>
+		<picker mode="multiSelector" bindchange="MultiChange" bindcolumnchange="MultiColumnChange" value="{{multiIndex}}"
+		 range="{{multiArray}}">
+			<view class="picker">
+				{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+			</view>
+		</picker>
+  </view>
+  <view class="cu-form-group">
+		<view class="title">输入框输入框</view>
+		<input placeholder="三字标题"></input>
+	</view>
+  <view class="cu-form-group text-right">
+		<view class="title">输入框</view>
+		<input placeholder="三字标题"></input>
+	</view>
+</form>
